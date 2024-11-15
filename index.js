@@ -5,8 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-const spotifyClientId = '96e42128e58b420caad559fc64661121';
-const spotifyClientSecret = '32419d3c0e8140ba84fd394ccf2d88d9';
+//const spotifyClientId = 'REDACTED';
+const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
+
+//const spotifyClientSecret = 'REDACTED';
+const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+
 let accessToken = '';
 let isEnabled = true;
 let pinCode = '1234'; // Default PIN, changeable in backend
